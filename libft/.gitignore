@@ -1,0 +1,14 @@
+a.out*
+.vscode
+*.o
+*.pch
+*.a
+libft_bonus.h.pch
+libft.h.pch
+tests
+.DS_Store
+en.subject.pdf
+libftTester
+test.c
+compile_flags.txt
+.build
