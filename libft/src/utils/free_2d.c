@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include <stddef.h>
 
-void	free_2d(void **tab, void(*del)(void *))
+void	free_2d(void **tab, void (*del)(void *))
 {
 	size_t	i;
 

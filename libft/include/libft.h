@@ -13,7 +13,7 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-#define FT_MOD(a, b) (((a) % (b) + (b)) % (b))
+# define FT_MOD(a, b) (((a) % (b) + (b)) % (b))
 
 # include <stddef.h>
 
@@ -25,7 +25,7 @@ typedef struct s_list
 
 typedef struct s_dict_node
 {
-	char 				*key;
+	char				*key;
 	void				*content;
 	struct s_dict_node	*next;
 }	t_dict_node;
@@ -93,7 +93,7 @@ void		ft_lstiter(t_list *lst, void (*f)(void *));
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 // dict
-t_dict		*ft_dict_new();
+t_dict		*ft_dict_new(void);
 t_dict_node	*ft_dict_set(t_dict *dict, char *key, void *value);
 void		*ft_dict_get(t_dict *dict, char *key);
 t_dict_node	*ft_dict_get_node(t_dict *dict, char *key);
@@ -103,6 +103,6 @@ void		ft_dict_clear(t_dict *dict, void (*del)(void *));
 void		ft_dict_unset(t_dict *dict, char *key);
 
 // utils
-void		free_2d(void **tab, void(*del)(void *));
+void		free_2d(void **tab, void (*del)(void *));
 
 #endif

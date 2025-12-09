@@ -15,7 +15,7 @@
 void	ft_dict_unset(t_dict *dict, char *key)
 {
 	t_dict_node	*node;
-	t_dict_node *prec_node;
+	t_dict_node	*prec_node;
 
 	node = dict->entry;
 	while (node)

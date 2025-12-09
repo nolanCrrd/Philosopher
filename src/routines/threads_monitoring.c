@@ -11,8 +11,19 @@
 /* ************************************************************************** */
 
 #include "philosopher.h"
+#include "colors.h"
 #include <stdlib.h>
 #include <stdio.h>
+
+static void	print_info(t_philo *current_philo, char *state,
+	t_thread_moni *monitoring, char *state_color)
+{
+	long	time;
+
+	set_actual_time(&time, monitoring->data->start_time);
+	printf("%s%ldms\t%s|%s #%i %s|%s %s%s\n", YELLOW, time, RESET,
+		MAGENTA, current_philo->philo_number, RESET, state_color, state, RESET);
+}
 
 void	update_philo(t_philo *current_philo, t_thread_moni *monitoring)
 {
@@ -22,22 +33,20 @@ void	update_philo(t_philo *current_philo, t_thread_moni *monitoring)
 	if (time - current_philo->last_eat >= monitoring->data->time_to_die)
 	{
 		monitoring->data->some_one_dead = 1;
-		printf("%ldms: %i is died\n", time, current_philo->philo_number);
+		print_info(current_philo, "is died", monitoring, RED);
 	}
 	if (current_philo->state == EATING)
-		printf("%ldms: %i is eating\n", time, current_philo->philo_number);
+		print_info(current_philo, "is eating", monitoring, GREEN);
 	else if (current_philo->state == SLEEPING)
-		printf("%ldms: %i is sleeping\n", time, current_philo->philo_number);
+		print_info(current_philo, "is sleeping", monitoring, BLUE);
 	else if (current_philo->state == THINKING)
-		printf("%ldms: %i is thinking\n", time, current_philo->philo_number);
+		print_info(current_philo, "is thinking", monitoring, CYAN);
 	else if (current_philo->state == FORK1 || current_philo->state == FORK2)
-		printf("%ldms: %i has taken a fork\n", time,
-			current_philo->philo_number);
+		print_info(current_philo, "has taken a fork", monitoring, YELLOW);
 	else if (current_philo->state == FINISH)
 	{
 		monitoring->data->some_one_dead = 1;
-		printf("%ldms: %i has eated \
-enought\n", time, current_philo->philo_number);
+		print_info(current_philo, "has finished his meal", monitoring, WHITE);
 	}
 }
 

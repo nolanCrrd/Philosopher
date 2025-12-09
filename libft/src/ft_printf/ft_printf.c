@@ -22,7 +22,8 @@ int	is_valid_format(char c)
 		|| c == 'x' || c == '%' || c == 'X' || c == 'p' || c == 'd');
 }
 
-void	print_correct_format(const char	*fmt, va_list *arg, long *nb_write, int fd)
+void	print_correct_format(const char *fmt,
+	va_list *arg, long *nb_write, int fd)
 {
 	char	*buffer;
 	char	tmp;

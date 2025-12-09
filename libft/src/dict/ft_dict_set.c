@@ -16,7 +16,7 @@
 t_dict_node	*ft_dict_set(t_dict *dict, char *key, void *content)
 {
 	t_dict_node	*node;
-	t_dict_node *new;
+	t_dict_node	*new;
 
 	new = ft_dict_new_node(key, content);
 	if (new == NULL)
