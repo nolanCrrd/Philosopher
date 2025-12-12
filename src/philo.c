@@ -6,13 +6,14 @@
 /*   By: ncorrear <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 11:59:09 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/12/11 11:59:20 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/12/12 11:03:38 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void	write_message(long long time, t_philo *philo, char *str, char *str_color)
+void	write_message(long long time, t_philo *philo,
+	char *str, char *str_color)
 {
 	pthread_mutex_lock(&philo->ctl->mutex);
 	if (philo->ctl->status == 0)

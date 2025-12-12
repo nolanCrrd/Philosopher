@@ -6,7 +6,7 @@
 /*   By: ncorrear <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 11:56:06 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/12/11 11:56:08 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/12/12 11:05:18 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,21 +41,6 @@ int	ft_atoi(char *str, int *err)
 	return ((int )res);
 }
 
-int check_if_full(t_philo *tmp)
-{
-    int num = tmp->ctl->num_of_philo;
-    int i = 0;
-
-    while (i < num)
-    {
-        if (tmp->eating_times >= tmp->ctl->num_eat)
-            return (1);
-        tmp = tmp->next;
-        i++;
-    }
-    return (0);
-}
-/*
 int	check_if_full(t_philo *tmp)
 {
 	int	i;
@@ -72,7 +57,7 @@ int	check_if_full(t_philo *tmp)
 		return (1);
 	return (0);
 }
-*/
+
 void	ft_clean(t_philo *tmp, t_control *ctl, int num)
 {
 	int		i;

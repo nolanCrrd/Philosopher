@@ -16,7 +16,6 @@ FSANITIZE = -fsanitize=undefined,thread -fno-omit-frame-pointer \
 
 CFLAGS = -Wall -Werror -Wextra -g \
 		-I include \
-		-I libft/include \
 		-pthread
 
 LDFLAGS = -pthread
@@ -50,7 +49,6 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 
 fclean: clean
 	rm -f $(NAME)
-	rm -f $(NAME_BONUS)
 
 clean:
 	rm -rf $(OBJ_DIR)

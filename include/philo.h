@@ -6,7 +6,7 @@
 /*   By: ncorrear <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 11:56:43 by ncorrear          #+#    #+#             */
-/*   Updated: 2025/12/11 11:56:50 by ncorrear         ###   ########.fr       */
+/*   Updated: 2025/12/12 11:03:26 by ncorrear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,8 @@ t_control	*controls_init(int ac, char **av, t_control *ctl);
 t_control	*parsing(int ac, char **av);
 
 /* algo utils functions */
-void		write_message(long long time, t_philo *philo, char *str, char *str_color);
+void		write_message(long long time, t_philo *philo,
+				char *str, char *str_color);
 void		philo_cycle(t_philo *tmp, long long stime);
 void		first_meal(t_philo *philo, long long stime);
 void		one(t_philo *tmp);
