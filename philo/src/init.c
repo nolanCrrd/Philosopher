@@ -88,7 +88,7 @@ t_control	*controls_init(int ac, char **av, t_control *control)
 	control->num_eat = -1;
 	if (ac == 6)
 		control->num_eat = ft_atoi(av[5], &idx);
-	if ((idx || control->num_of_philo >= 0) && (free(control), 1))
+	if (idx && (free(control), 1))
 		return (NULL);
 	pthread_mutex_init(&control->mutex, NULL);
 	control->forks = malloc(sizeof(pthread_mutex_t) * control->num_of_philo);
